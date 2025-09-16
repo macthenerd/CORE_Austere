@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiGet } from '../api';
+import FileBrowserComponent from './FileBrowserComponent';
 import '../styles/SearchComponent.css';
 
 function SearchComponent() {
@@ -13,13 +14,12 @@ function SearchComponent() {
 
   const navigate = useNavigate();
 
-  // Fetch available tables from the backend on mount
-  useEffect(() => {
-    let mounted = true;
+  // Function to fetch tables
+  const fetchTables = () => {
     setLoadingTables(true);
+    setTableError(null);
     apiGet('/tables')
       .then(res => {
-        if (!mounted) return;
         setTables(res.data);
         if (res.data.length > 0) {
           setSelectedTable(res.data[0]);
@@ -27,12 +27,31 @@ function SearchComponent() {
       })
       .catch(err => {
         console.error('Error fetching tables:', err);
-        if (mounted) setTableError('Unable to load tables');
+        setTableError('Unable to load tables');
       })
       .finally(() => {
-        if (mounted) setLoadingTables(false);
+        setLoadingTables(false);
       });
-    return () => { mounted = false; };
+  };
+
+  // Fetch available tables from the backend on mount
+  useEffect(() => {
+    fetchTables();
+  }, []);
+
+  // Listen for database changes (when user creates new DB)
+  useEffect(() => {
+    const handleDatabaseChange = () => {
+      console.log('Database changed, refreshing tables...');
+      fetchTables();
+    };
+
+    // Listen for custom event
+    window.addEventListener('databaseChanged', handleDatabaseChange);
+    
+    return () => {
+      window.removeEventListener('databaseChanged', handleDatabaseChange);
+    };
   }, []);
 
   const handleSearch = () => {
@@ -52,6 +71,13 @@ function SearchComponent() {
     }
   };
 
+  // Handle file selection from browser
+  const handleFileSelect = (file) => {
+    // Auto-fill search with file name or keywords
+    const searchTerms = file.keywords ? file.keywords.split(' ')[0] : file.name.split('.')[0];
+    setQuery(searchTerms);
+  };
+
   return (
     <div className="page-content">
       <div className="search-container">
@@ -60,19 +86,29 @@ function SearchComponent() {
         {loadingTables ? (
           <p>Loading tables…</p>
         ) : tableError ? (
-          <p className="error">{tableError}</p>
+          <div className="error-section">
+            <p className="error">{tableError}</p>
+            <button onClick={fetchTables} className="refresh-button">
+              Refresh Tables
+            </button>
+          </div>
         ) : (
           <div className="table-select">
             <label htmlFor="table-dropdown">Table:</label>
-            <select
-              id="table-dropdown"
-              value={selectedTable}
-              onChange={e => setSelectedTable(e.target.value)}
-            >
-              {tables.map(tbl => (
-                <option key={tbl} value={tbl}>{tbl}</option>
-              ))}
-            </select>
+            <div className="table-select-row">
+              <select
+                id="table-dropdown"
+                value={selectedTable}
+                onChange={e => setSelectedTable(e.target.value)}
+              >
+                {tables.map(tbl => (
+                  <option key={tbl} value={tbl}>{tbl}</option>
+                ))}
+              </select>
+              <button onClick={fetchTables} className="refresh-button" title="Refresh tables">
+                🔄
+              </button>
+            </div>
           </div>
         )}
 
@@ -94,6 +130,10 @@ function SearchComponent() {
             Search
           </button>
         </div>
+
+        {/* File Browser */}
+        {console.log('SearchComponent: About to render FileBrowserComponent')}
+        <FileBrowserComponent onFileSelect={handleFileSelect} />
       </div>
     </div>
   );

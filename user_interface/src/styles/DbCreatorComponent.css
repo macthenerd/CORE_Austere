@@ -1,0 +1,278 @@
+/* src/styles/DbCreatorComponent.css */
+
+.db-creator-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.db-creator-container h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(248, 249, 250, 0.8);
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.section h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.section h4 {
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+/* Folder Drop Zone */
+.folder-drop-zone {
+  border: 3px dashed #3498db;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+}
+
+.folder-drop-zone:hover {
+  border-color: #2980b9;
+  background: rgba(52, 152, 219, 0.1);
+}
+
+.drop-zone-content p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.drop-zone-content p:first-child {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.selected-path {
+  background: rgba(46, 204, 113, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  color: #27ae60 !important;
+  font-family: monospace;
+  word-break: break-all;
+  margin-top: 15px;
+}
+
+/* Buttons */
+.select-folder-button,
+.create-db-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.select-folder-button:hover,
+.create-db-button:hover {
+  background: linear-gradient(135deg, #2980b9, #21618c);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.select-folder-button:disabled,
+.create-db-button:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.create-db-button {
+  background: linear-gradient(135deg, #27ae60, #229954);
+  font-size: 18px;
+  padding: 15px 30px;
+}
+
+.create-db-button:hover {
+  background: linear-gradient(135deg, #229954, #1e8449);
+}
+
+/* Database Name Input */
+.db-name-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.db-name-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.db-name-input:disabled {
+  background: #f8f9fa;
+  color: #666;
+}
+
+/* Options Grid */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #2c3e50;
+}
+
+.option-item:hover {
+  background: rgba(52, 152, 219, 0.1);
+}
+
+.option-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* File Types */
+.file-types-section {
+  margin-top: 20px;
+}
+
+.file-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.file-type-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  color: #2c3e50;
+}
+
+.file-type-item:hover {
+  background: rgba(52, 152, 219, 0.1);
+  border-color: #3498db;
+}
+
+.file-type-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* Progress */
+.progress-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #ecf0f1;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.progress-text {
+  text-align: center;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 10px 0;
+}
+
+.current-file {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+/* Status */
+.status-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.status-text {
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  background: rgba(236, 240, 241, 0.8);
+  color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .db-creator-container {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .file-types-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  
+  .folder-drop-zone {
+    padding: 20px;
+  }
+}

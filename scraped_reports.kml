@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <name>CORE Scout Export</name>
+        <description>Exported data from CORE Scout database</description>
+        <Folder id="2">
+            <name>Reports</name>
+            <description>Database records with MGRS coordinates (10 records)</description>
+            <Placemark id="4">
+                <name>1</name>
+                <description><![CDATA[<div style='font-family: Arial, sans-serif;'><b>Id:</b> 1<br/><b>Source Path:</b> \\share\intel\ops\iraq\2025\SIGACTS\sigacts_38SMB_20250301.pdf<br/><b>File Type:</b> pdf<br/><b>Sha256:</b> a9f2b743bc1d4a8e9f0b2c4d6e7f8090aabbccddeeff00112233445566778899<br/><b>Title:</b> SIGACT: IED Discovery near MSR Tampa<br/><b>Author:</b> SFC R. Delgado<br/><b>Classification:</b> SECRET//REL<br/><b>Theater:</b> CENTCOM<br/><b>Op Name:</b> OP SENTINEL DUNE<br/><b>Report Date:</b> 2025-03-01<br/><b>Mgrs All:</b> 38SMB1234567890; 38S MB 12345 67890; 38SMC2345678901<br/><b>Utm Zone:</b> 38S<br/><b>Latitude:</b> 33.312<br/><b>Longitude:</b> 44.361<br/><b>Summary:</b> Coalition patrol discovered and cleared an IED along MSR Tampa; no casualties.<br/><b>Extracted Text:</b> Patrol Bravo-2 identified disturbed soil and command wire 300m south of CP-17. Primary grid: 38SMB 12345 67890. Secondary references observed: 38SMC 2345 6789. EOD responded, conducted a controlled de...<br/><b>Attachments Count:</b> 2<br/><b>Keywords:</b> IED,MSR Tampa,EOD,C-IED<br/><b>Ingested At:</b> 2025-09-15T15:37:16Z</div>]]></description>
+                <ExtendedData>
+                    <Data name="MGRS">
+                        <value>38SMB1234567890</value>
+                    </Data>
+                    <Data name="ID">
+                        <value>1</value>
+                    </Data>
+                    <Data name="TITLE">
+                        <value>SIGACT: IED Discovery near MSR Tampa</value>
+                    </Data>
+                </ExtendedData>
+                <Point id="3">
+                    <coordinates>44.060132426113746,33.14621804037357,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="10">
+                <name>2</name>
+                <description><![CDATA[<div style='font-family: Arial, sans-serif;'><b>Id:</b> 2<br/><b>Source Path:</b> \\share\intel\ops\afghanistan\2024\HHQ\FRAGO\frago42SXD_20241214.docx<br/><b>File Type:</b> docx<br/><b>Sha256:</b> bb22aa33cc44dd55ee66ff7700112233445566778899aabbccddeeff00112233<br/><b>Title:</b> FRAGO: Checkpoint Reconfiguration<br/><b>Author:</b> CPT N. Rahimi<br/><b>Classification:</b> SECRET<br/><b>Theater:</b> CENTCOM<br/><b>Op Name:</b> OP SILENT ANVIL<br/><b>Report Date:</b> 2024-12-14<br/><b>Mgrs All:</b> 42SXD 3456 8901; 42SXD34568901; 41SQT01230123<br/><b>Utm Zone:</b> 42S<br/><b>Latitude:</b> 34.555<br/><b>Longitude:</b> 69.207<br/><b>Summary:</b> Directed repositioning of CP-12 and CP-13 to interdict smuggling corridor.<br/><b>Extracted Text:</b> Annex A details terrain masking and fields of fire. Primary grid for CP-12: 42SXD 3456 8901. Alternate blocking position at 41SQT 0123 0123. Units will establish TCPs from 2000Z; sustainment plan in A...<br/><b>Attachments Count:</b> 1<br/><b>Keywords:</b> FRAGO,CP,terrain,interdiction<br/><b>Ingested At:</b> 2025-09-15T15:37:16Z</div>]]></description>
+                <ExtendedData>
+                    <Data name="MGRS">
+                        <value>42SXD34568901</value>
+                    </Data>
+                    <Data name="ID">
+                        <value>2</value>
+                    </Data>
+                    <Data name="TITLE">
+                        <value>FRAGO: Checkpoint Reconfiguration</value>
+                    </Data>
+                </ExtendedData>
+                <Point id="9">
+                    <coordinates>70.4769772755539,35.134977673682634,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="16">
+                <name>3</name>
+                <description><![CDATA[<div style='font-family: Arial, sans-serif;'><b>Id:</b> 3<br/><b>Source Path:</b> \\share\imagery\levant\2025\IMINT\ref_overwatch_37SDS_20250602.pptx<br/><b>File Type:</b> pptx<br/><b>Sha256:</b> 0011aa22bb33cc44dd55ee6677889900aabbccddeeff112233445566778899aa<br/><b>Title:</b> IMINT Overwatch: Storage Yard Activity<br/><b>Author:</b> WO R. Haddad<br/><b>Classification:</b> SECRET//REL<br/><b>Theater:</b> CENTCOM<br/><b>Op Name:</b> OP IRON VINE<br/><b>Report Date:</b> 2025-06-02<br/><b>Mgrs All:</b> 37SDS 99887 76655; 37SDR 01234 56789<br/><b>Utm Zone:</b> 37S<br/><b>Latitude:</b> 35.21<br/><b>Longitude:</b> 40.195<br/><b>Summary:</b> Increase in heavy-vehicle staging at storage yard; probable pre-mission alignment.<br/><b>Extracted Text:</b> Time series imagery indicates new tire tracks and refueling bladders at 37SDS 99887 76655. Secondary vehicle assembly observed near 37SDR 01234 56789. No thermal signatures at time of collect; revisit...<br/><b>Attachments Count:</b> 3<br/><b>Keywords:</b> IMINT,staging,logistics,vehicles<br/><b>Ingested At:</b> 2025-09-15T15:37:16Z</div>]]></description>
+                <ExtendedData>
+                    <Data name="MGRS">
+                        <value>37SDS9988776655</value>
+                    </Data>
+                    <Data name="ID">
+                        <value>3</value>
+                    </Data>
+                    <Data name="TITLE">
+                        <value>IMINT Overwatch: Storage Yard Activity</value>
+                    </Data>
+                </ExtendedData>
+                <Point id="15">
+                    <coordinates>38.9987872146714,33.228825251717964,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="22">
+                <name>4</name>
+                <description><![CDATA[<div style='font-family: Arial, sans-serif;'><b>Id:</b> 4<br/><b>Source Path:</b> \\share\reports\eucom\2023\HUMINT\spot_33UXP_20231120.txt<br/><b>File Type:</b> txt<br/><b>Sha256:</b> 8899aabbccddeeff00112233445566778899aabbccddeeff0011223344556677<br/><b>Title:</b> HUMINT Spot Report: Rail Spur Observation<br/><b>Author:</b> Agent A17<br/><b>Classification:</b> CONFIDENTIAL<br/><b>Theater:</b> EUCOM<br/><b>Op Name:</b> OP RAILWATCH<br/><b>Report Date:</b> 2023-11-20<br/><b>Mgrs All:</b> 33UXP 12340 98765; 33UYP 22330 97760<br/><b>Utm Zone:</b> 33U<br/><b>Latitude:</b> 48.14<br/><b>Longitude:</b> 11.56<br/><b>Summary:</b> Observed night loading at rail spur; covered tarps over equipment.<br/><b>Extracted Text:</b> Source reports two flatcars loaded at 0100L; activity centered on 33UXP 12340 98765. Secondary sighting at 33UYP 22330 97760 consistent with staging. Personnel wore generic coveralls; no unit patches ...<br/><b>Attachments Count:</b> 0<br/><b>Keywords:</b> HUMINT,rail,logistics<br/><b>Ingested At:</b> 2025-09-15T15:37:16Z</div>]]></description>
+                <ExtendedData>
+                    <Data name="MGRS">
+                        <value>33UXP1234098765</value>
+                    </Data>
+                    <Data name="ID">
+                        <value>4</value>
+                    </Data>
+                    <Data name="TITLE">
+                        <value>HUMINT Spot Report: Rail Spur Observation</value>
+                    </Data>
+                </ExtendedData>
+                <Point id="21">
+                    <coordinates>16.527742130170598,48.73177466078846,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="28">
+                <name>5</name>
+                <description><![CDATA[<div style='font-family: Arial, sans-serif;'><b>Id:</b> 5<br/><b>Source Path:</b> \\share\safety\africa\2025\SITREP\sitrep_35NQA_20250704.pdf<br/><b>File Type:</b> pdf<br/><b>Sha256:</b> aa55bb66cc77dd88ee9900112233445566778899aabbccddeeff001122334455<br/><b>Title:</b> SITREP: Convoy Route Assessment<br/><b>Author:</b> Lt K. Mensah<br/><b>Classification:</b> UNCLASSIFIED//FOUO<br/><b>Theater:</b> AFRICOM<br/><b>Op Name:</b> OP BLUE CEDAR<br/><b>Report Date:</b> 2025-07-04<br/><b>Mgrs All:</b> 35NQA 55667 78899; 35NQB 12345 67890; 35NQA556678<br/><b>Utm Zone:</b> 35N<br/><b>Latitude:</b> 13.507<br/><b>Longitude:</b> 2.106<br/><b>Summary:</b> Road segment shows washouts; two bridges require inspection; alternate route proposed.<br/><b>Extracted Text:</b> Team conducted route recon from CP Alpha to CP Delta. Primary washout near 35NQA 55667 78899. Bridge abutment cracks observed; temporary bypass recommended. Alternate link-up at 35NQB 12345 67890 to a...<br/><b>Attachments Count:</b> 1<br/><b>Keywords:</b> SITREP,route,bridges,flooding<br/><b>Ingested At:</b> 2025-09-15T15:37:16Z</div>]]></description>
+                <ExtendedData>
+                    <Data name="MGRS">
+                        <value>35NQA5566778899</value>
+                    </Data>
+                    <Data name="ID">
+                        <value>5</value>
+                    </Data>
+                    <Data name="TITLE">
+                        <value>SITREP: Convoy Route Assessment</value>
+                    </Data>
+                </ExtendedData>
+                <Point id="27">
+                    <coordinates>29.297171982779183,0.7132461783596876,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="34">
+                <name>6</name>
+                <description><![CDATA[<div style='font-family: Arial, sans-serif;'><b>Id:</b> 6<br/><b>Source Path:</b> \\share\sigint\mena\2024\traffic\cut_37TCK_20240918.msg<br/><b>File Type:</b> msg<br/><b>Sha256:</b> cc11dd22ee33ff44001122335566778899aabbccddeeff001122334455667788<br/><b>Title:</b> SIGINT Cut: Push-to-Talk Net<br/><b>Author:</b> Analyst M. O'Connor<br/><b>Classification:</b> SECRET<br/><b>Theater:</b> CENTCOM<br/><b>Op Name:</b> OP DESERT NET<br/><b>Report Date:</b> 2024-09-18<br/><b>Mgrs All:</b> 37TCK 44556 67788; 37TCL 40123 60123<br/><b>Utm Zone:</b> 37T<br/><b>Latitude:</b> 36.183<br/><b>Longitude:</b> 43.993<br/><b>Summary:</b> Short burst voice packets geolocated to industrial quarter; low discipline on comms.<br/><b>Extracted Text:</b> Two operators discussed fuel delivery and spare parts. Primary centroid: 37TCK 44556 67788. Occasional handoff to 37TCL 40123 60123. Net uses common call signs; likely ad hoc coordination.<br/><b>Attachments Count:</b> 0<br/><b>Keywords:</b> SIGINT,PTT,geoloc<br/><b>Ingested At:</b> 2025-09-15T15:37:16Z</div>]]></description>
+                <ExtendedData>
+                    <Data name="MGRS">
+                        <value>37TCK4455667788</value>
+                    </Data>
+                    <Data name="ID">
+                        <value>6</value>
+                    </Data>
+                    <Data name="TITLE">
+                        <value>SIGINT Cut: Push-to-Talk Net</value>
+                    </Data>
+                </ExtendedData>
+                <Point id="33">
+                    <coordinates>37.032988673204734,44.84656495504571,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="40">
+                <name>9</name>
+                <description><![CDATA[<div style='font-family: Arial, sans-serif;'><b>Id:</b> 9<br/><b>Source Path:</b> \\share\training\usfk\2023\range\range_card_52SDB_20230415.jpg<br/><b>File Type:</b> jpg<br/><b>Sha256:</b> ff4400112233445566778899aabbccddeeff00112233445566778899aabbccdd<br/><b>Title:</b> Range Card: Sector Sketch<br/><b>Author:</b> SSG P. Choi<br/><b>Classification:</b> UNCLASSIFIED<br/><b>Theater:</b> USFK<br/><b>Op Name:</b> OP STEEL LOTUS<br/><b>Report Date:</b> 2023-04-15<br/><b>Mgrs All:</b> 52SDB 76543 21098; 52SDA 70000 20000<br/><b>Utm Zone:</b> 52S<br/><b>Latitude:</b> 37.915<br/><b>Longitude:</b> 127.056<br/><b>Summary:</b> Defensive sector with interlocking fields of fire; claymore placements annotated.<br/><b>Extracted Text:</b> Primary TRPs aligned on 52SDB 76543 21098; sector limits painted on stakes. Alternate TRP at 52SDA 70000 20000. Firing data and range estimates updated after walk-back drills.<br/><b>Attachments Count:</b> 0<br/><b>Keywords:</b> range,training,TRP,defense<br/><b>Ingested At:</b> 2025-09-15T15:37:16Z</div>]]></description>
+                <ExtendedData>
+                    <Data name="MGRS">
+                        <value>52SDB7654321098</value>
+                    </Data>
+                    <Data name="ID">
+                        <value>9</value>
+                    </Data>
+                    <Data name="TITLE">
+                        <value>Range Card: Sector Sketch</value>
+                    </Data>
+                </ExtendedData>
+                <Point id="39">
+                    <coordinates>128.74966419365177,32.7274284457863,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="46">
+                <name>10</name>
+                <description><![CDATA[<div style='font-family: Arial, sans-serif;'><b>Id:</b> 10<br/><b>Source Path:</b> \\share\ops\conus\2025\dr\severe_weather\wx_sitrep_18SUJ_20250428.txt<br/><b>File Type:</b> txt<br/><b>Sha256:</b> 00112233445566778899aabbccddeeff00112233445566778899aabbccddeeff<br/><b>Title:</b> WX SITREP: Flood Response<br/><b>Author:</b> TSgt L. Morgan<br/><b>Classification:</b> UNCLASSIFIED//FOUO<br/><b>Theater:</b> NORTHCOM<br/><b>Op Name:</b> OP RIVER GUARD<br/><b>Report Date:</b> 2025-04-28<br/><b>Mgrs All:</b> 18SUJ 22850 70450; 18SUH 22000 70000<br/><b>Utm Zone:</b> 18S<br/><b>Latitude:</b> 35.052<br/><b>Longitude:</b> -78.879<br/><b>Summary:</b> Rising river levels impacting access roads; high-water vehicles deployed; staging at fairgrounds.<br/><b>Extracted Text:</b> ICP established at 18SUJ 22850 70450; sandbag operations ongoing. Evac routes marked; shelter intake steady. HEC-RAS model predicts crest by 0600L; request additional pumps and barricades.<br/><b>Attachments Count:</b> 1<br/><b>Keywords:</b> flood,wx,ICP,staging<br/><b>Ingested At:</b> 2025-09-15T15:37:16Z</div>]]></description>
+                <ExtendedData>
+                    <Data name="MGRS">
+                        <value>18SUJ2285070450</value>
+                    </Data>
+                    <Data name="ID">
+                        <value>10</value>
+                    </Data>
+                    <Data name="TITLE">
+                        <value>WX SITREP: Flood Response</value>
+                    </Data>
+                </ExtendedData>
+                <Point id="45">
+                    <coordinates>-77.05928010092974,39.465413169690855,0.0</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>

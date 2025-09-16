@@ -58,3 +58,28 @@ class SQLiteDatabase:
             sql = f"SELECT * FROM {table_name} WHERE {where_clause} LIMIT ?"
             self.cursor.execute(sql, (*values, limit))
             return [dict(row) for row in self.cursor.fetchall()]
+
+    def get_record_by_hash(self, sha256_hash: str) -> Dict[str, Any]:
+        """
+        Retrieve a single record by its hash/ID from the reports table.
+        """
+        with self._lock:
+            # Try to find by 'id' field first, then by 'file_hash' if it exists
+            self.cursor.execute("SELECT * FROM reports WHERE id = ? LIMIT 1", (sha256_hash,))
+            row = self.cursor.fetchone()
+            
+            if row:
+                return dict(row)
+            
+            # If not found by id, try file_hash column if it exists
+            try:
+                self.cursor.execute("SELECT * FROM reports WHERE file_hash = ? LIMIT 1", (sha256_hash,))
+                row = self.cursor.fetchone()
+                if row:
+                    return dict(row)
+            except sqlite3.OperationalError:
+                # file_hash column might not exist
+                pass
+            
+            # If still not found, return None or raise exception
+            return None

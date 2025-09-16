@@ -85,3 +85,58 @@
   font-family: 'Roboto', sans-serif;
   /* Ensure the font is applied */
 }
+
+/* Table selection row */
+.table-select-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.table-select-row select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.refresh-button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-button:hover {
+  background: #2980b9;
+}
+
+.error-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.error-section .refresh-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.table-select {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.table-select label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}

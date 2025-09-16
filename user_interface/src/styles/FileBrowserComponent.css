@@ -1,0 +1,257 @@
+/* src/styles/FileBrowserComponent.css */
+
+.file-browser-container {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.file-browser-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.file-browser-header h3 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.file-browser-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.file-search-input,
+.file-filter-select,
+.file-sort-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+}
+
+.file-search-input {
+  min-width: 200px;
+}
+
+.file-filter-select,
+.file-sort-select {
+  min-width: 120px;
+}
+
+.refresh-files-button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-files-button:hover {
+  background: #2980b9;
+}
+
+/* File List */
+.file-list {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+}
+
+.file-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-item:hover {
+  background: rgba(52, 152, 219, 0.05);
+  border-left: 4px solid #3498db;
+}
+
+.file-item:last-child {
+  border-bottom: none;
+}
+
+.file-icon {
+  font-size: 24px;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-name {
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 5px;
+  word-break: break-all;
+}
+
+.file-extension {
+  color: #7f8c8d;
+  font-weight: normal;
+  font-size: 0.9em;
+  margin-left: 5px;
+}
+
+.file-metadata {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+
+.file-topic {
+  background: rgba(52, 152, 219, 0.1);
+  color: #2980b9;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.file-coordinates {
+  color: #27ae60;
+  font-size: 14px;
+}
+
+.file-classification {
+  background: rgba(149, 165, 166, 0.2);
+  color: #2c3e50;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.file-subject {
+  color: #34495e;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.file-keywords {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.keyword-tag {
+  background: rgba(241, 196, 15, 0.2);
+  color: #d68910;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.file-date {
+  color: #7f8c8d;
+  font-size: 12px;
+}
+
+/* Loading and Error States */
+.loading-message,
+.error-message,
+.no-files-message {
+  text-align: center;
+  padding: 40px 20px;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+.error-message {
+  color: #e74c3c;
+}
+
+.retry-button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.retry-button:hover {
+  background: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .file-browser-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .file-browser-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .file-search-input,
+  .file-filter-select,
+  .file-sort-select {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .file-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .file-icon {
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .file-metadata {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+/* Scrollbar Styling */
+.file-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.file-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.file-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

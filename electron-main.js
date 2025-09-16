@@ -129,7 +129,23 @@ app.whenReady().then(async () => {
         return dbPath;
     });
 
-    // 5) IPC: Drag‐and‐drop
+    // 5) IPC: Folder selection dialog
+    ipcMain.handle('dialog:openFolder', async () => {
+        console.log('[IPC] dialog:openFolder triggered');
+        const { canceled, filePaths } = await dialog.showOpenDialog({
+            title: 'Select Folder to Process',
+            properties: ['openDirectory']
+        });
+        if (canceled || filePaths.length === 0) {
+            console.log('[IPC] dialog:openFolder canceled');
+            return null;
+        }
+        const folderPath = filePaths[0];
+        console.log('[IPC] dialog:openFolder got folder path →', folderPath);
+        return folderPath;
+    });
+
+    // 6) IPC: Drag‐and‐drop
     ipcMain.handle('file-dropped', async (_e, filePath) => {
         console.log('[IPC] file-dropped triggered with →', filePath);
         if (filePath?.toLowerCase().endsWith('.db')) {

@@ -8,12 +8,22 @@ export default function SettingsComponent() {
   const onDrop = useCallback(async (e) => {
     e.preventDefault();
     const file = e.dataTransfer.files[0];
-    if (!file || !file.path.toLowerCase().endsWith('.db')) {
+    
+    // Check if we're running in Electron (has electronAPI) or browser
+    if (!window.electronAPI) {
+      setStatus('⛔ File upload only works in the Electron app, not in browser mode.');
+      return;
+    }
+    
+    if (!file || !file.name.toLowerCase().endsWith('.db')) {
       setStatus('⛔ Please drop a valid .db file.');
       return;
     }
+    
     try {
-      const returned = await window.electronAPI.loadDbFile(file.path);
+      // In Electron, file.path exists; in browser it doesn't
+      const filePath = file.path || file.name;
+      const returned = await window.electronAPI.loadDbFile(filePath);
       if (returned) {
         setStatus(`✅ Loaded database: ${returned}`);
       } else {
@@ -30,6 +40,12 @@ export default function SettingsComponent() {
 
   // Browse… button & box click both call this
   const handleBrowse = useCallback(async () => {
+    // Check if we're running in Electron (has electronAPI) or browser
+    if (!window.electronAPI) {
+      setStatus('⛔ File selection only works in the Electron app, not in browser mode.');
+      return;
+    }
+    
     try {
       const returned = await window.electronAPI.selectDbFile();
       if (returned && returned.toLowerCase().endsWith('.db')) {
