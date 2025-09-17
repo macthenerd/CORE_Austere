@@ -142,6 +142,7 @@
   margin: 0;
   color: #545454;
   font-size: 0.9rem;
+<<<<<<< Updated upstream
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: pre-wrap;
@@ -205,6 +206,48 @@
   font-size: 0.8rem;
   color: #666;
   font-style: italic;
+=======
+  line-height: 1.4;
+}
+
+.sr-snippets {
+  margin: 10px 0;
+}
+
+.sr-metadata {
+  margin: 6px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.sr-metadata strong {
+  color: #333;
+}
+
+.sr-coordinates {
+  margin: 8px 0;
+  font-size: 12px;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Search term highlighting - make it very visible for testing */
+.search-highlight,
+mark.search-highlight {
+  background-color: #ffff00 !important;
+  color: #000000 !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  font-weight: bold !important;
+  border: 2px solid #ff0000 !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3) !important;
+}
+
+/* Hover effect for highlighted terms */
+.search-highlight:hover {
+  background-color: #ffc107;
+  color: #000;
+>>>>>>> Stashed changes
 }
 
 /* Status messages */

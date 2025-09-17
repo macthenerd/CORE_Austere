@@ -1,7 +1,12 @@
 // src/components/SearchResultsComponent.js
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+<<<<<<< Updated upstream
 import { simpleSearch, searchTable, getTableInfo, exportKML } from '../api';
+=======
+import { apiGet } from '../api';
+import { getContextSnippets, highlightSnippets } from '../utils/textHighlight';
+>>>>>>> Stashed changes
 import '../styles/SearchResultsComponent.css';
 
 export default function SearchResultsComponent() {
@@ -233,6 +238,7 @@ export default function SearchResultsComponent() {
 
       <div className="sr-list">
         {results.map((item, idx) => {
+<<<<<<< Updated upstream
           const record = item._source || item;
           const idVal = record[idField];
 
@@ -249,12 +255,70 @@ export default function SearchResultsComponent() {
           // Get match information
           const matches = record._matches || [];
 
+=======
+          const idVal = item[idField];
+          const fullText = item['full_text'] || item[snippetField] || '';
+          
+          // Debug logging
+          console.log('SearchResults Debug:', {
+            query,
+            fullTextLength: fullText?.length || 0,
+            hasFullText: !!fullText,
+            fullTextPreview: fullText?.substring(0, 100)
+          });
+
+          // Find where search term appears in full text
+          const findSearchTermContext = (text, searchTerm) => {
+            if (!text || !searchTerm) return text.substring(0, 300);
+            
+            const lowerText = text.toLowerCase();
+            const lowerTerm = searchTerm.toLowerCase();
+            const index = lowerText.indexOf(lowerTerm);
+            
+            if (index !== -1) {
+              // Found the term, extract context around it
+              const start = Math.max(0, index - 150);
+              const end = Math.min(text.length, index + searchTerm.length + 150);
+              let context = text.substring(start, end);
+              
+              if (start > 0) context = '...' + context;
+              if (end < text.length) context = context + '...';
+              
+              return context;
+            }
+            
+            // Term not found in this snippet, return beginning
+            return text.substring(0, 300) + '...';
+          };
+
+          const contextText = findSearchTermContext(fullText, query);
+          console.log('Context around search term:', contextText);
+          
+          // Create highlighted title
+          const titleText = snippetField === idField
+            ? String(idVal)
+            : String(item[snippetField] || '').split('\n')[0].slice(0, 80);
+          
+          // Simple inline highlighting function as fallback
+          const simpleHighlight = (text, searchTerm) => {
+            if (!text || !searchTerm) return text;
+            console.log('Highlighting:', { text: text.substring(0, 50), searchTerm });
+            const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            const highlighted = text.replace(regex, '<mark class="search-highlight">$1</mark>');
+            console.log('Result contains highlight:', highlighted.includes('search-highlight'));
+            return highlighted;
+          };
+          
+          const highlightedTitle = simpleHighlight(titleText, query);
+          
+>>>>>>> Stashed changes
           return (
             <div
               key={idx}
               className="sr-card"
               onClick={() => openRecord(item)}
             >
+<<<<<<< Updated upstream
               <h3 className="sr-title">
                 {String(titleValue)}
               </h3>
@@ -293,6 +357,67 @@ export default function SearchResultsComponent() {
               {item._score && (
                 <div className="sr-score">
                   Score: {item._score.toFixed(2)}
+=======
+              <h3 
+                className="sr-title"
+                dangerouslySetInnerHTML={{ __html: highlightedTitle }}
+              />
+              <div className="sr-url">
+                {table}/{idVal}
+              </div>
+              
+              {/* Show metadata with highlighting */}
+              {item.subjects && item.subjects !== idVal && (
+                <div className="sr-metadata">
+                  <strong>Subject:</strong>{' '}
+                  <span dangerouslySetInnerHTML={{ 
+                    __html: simpleHighlight(item.subjects, query)
+                  }} />
+                </div>
+              )}
+              
+              {item.topics && (
+                <div className="sr-metadata">
+                  <strong>Topics:</strong>{' '}
+                  <span dangerouslySetInnerHTML={{ 
+                    __html: simpleHighlight(item.topics, query)
+                  }} />
+                </div>
+              )}
+              
+              {item.keywords && (
+                <div className="sr-metadata">
+                  <strong>Keywords:</strong>{' '}
+                  <span dangerouslySetInnerHTML={{ 
+                    __html: simpleHighlight(item.keywords, query)
+                  }} />
+                </div>
+              )}
+              
+              {/* Show highlighted content snippets */}
+              <div className="sr-snippets">
+                {fullText && (
+                  <p 
+                    className="sr-snippet"
+                    dangerouslySetInnerHTML={{ 
+                      __html: simpleHighlight(contextText, query)
+                    }}
+                  />
+                )}
+                {!fullText && (
+                  <p className="sr-snippet">
+                    No content available for highlighting
+                  </p>
+                )}
+              </div>
+              
+              {/* Show MGRS if available */}
+              {item.MGRS && (
+                <div className="sr-coordinates">
+                  📍 <span dangerouslySetInnerHTML={{ 
+                    __html: simpleHighlight(item.MGRS, query)
+                  }} />
+>>>>>>> Stashed changes
                 </div>
               )}
             </div>
